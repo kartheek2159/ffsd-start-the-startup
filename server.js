@@ -1,4 +1,3 @@
-//hello boo
 var express = require("express");
 var app = express();
 
@@ -35,6 +34,13 @@ http.listen(3000, function () {
     var database = client.db("ffsdproject");
     console.log("Database connected");
 
+    app.get("/", function (request, result) {
+      result.render("landingpage");
+    });
+    app.get("/index", function (request, result) {
+      result.render("index");
+    });
+
     app.get("/signup", function (request, result) {
       result.render("signup");
     });
@@ -43,6 +49,7 @@ http.listen(3000, function () {
       var username = request.fields.username;
       var email = request.fields.email;
       var password = request.fields.password;
+      var confpass=request.fields.confirmpassword;
       var gender = request.fields.gender;
       var reset_token = "";
 
@@ -58,6 +65,7 @@ http.listen(3000, function () {
           ],
         },
         function (error, user) {
+          if(password)
           if (user == null) {
             bcrypt.hash(password, 10, function (error, hash) {
               database.collection("users").insertOne(
@@ -118,7 +126,7 @@ http.listen(3000, function () {
           } else {
             bcrypt.compare(password, user.password, function (error, isVerify) {
               if (isVerify) {
-                var accessToken = jwt.sign({ email: email }, accessTokenSecret);
+                var accessToken = jwt.sign({ email: email }, accessTokenSecret); //generate access token
                 database.collection("users").findOneAndUpdate(
                   {
                     email: email,
@@ -381,9 +389,6 @@ http.listen(3000, function () {
           }
         });
       });
-      app.get("/",function(request,result){
-        result.render("index");
-      });
       app.post("/addPost",function(request,result){
         var accessToken=request.fields.accessToken;
         var caption=request.fields.caption;
@@ -419,11 +424,9 @@ http.listen(3000, function () {
               "caption":caption,
               "image":image,
               "video":video,
-              //"documents":doc,
               "type":type,
               "createdAt":createdAt,
               "likers":[],
-              // "comments":[],
               "shares":[],
               "user":{
                 "_id":user._id,
@@ -440,11 +443,9 @@ http.listen(3000, function () {
                     "caption":caption,
                     "image":image,
                     "video":video,
-                    //"documents":doc,
                     "type":type,
                     "createdAt":createdAt,
                     "likers":[],
-                    // "comments":[],
                     "shares":[],
 
                   }

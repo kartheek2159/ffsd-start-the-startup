@@ -28,14 +28,6 @@
 		</div>
 	</div>
 </div>
-
- 
-
-<!-- <script src="/public/js/jquery-3.3.1.min.js"></script>
-<script src="/public/js/script.js"></script>
-<script src="/public/js/main.min.js"></script>
-<script src="/public/js/socket.io.js"></script> -->
-
 <script>
 
 	window.user = null;
@@ -75,21 +67,6 @@
 							showFriends();
 						}
 
-						// if (typeof isNotifications !== "undefined" && isNotifications) {
-						// 	showNotifications();
-						// 	markNotificationsAsRead();
-						// } else {
-						// 	var notificationsCount = 0;
-						// 	for (var a = 0; a < window.user.notifications.length; a++) {
-						// 		if (!window.user.notifications[a].isRead) {
-						// 			notificationsCount++;
-						// 		}
-						// 	}
-						// 	if (notificationsCount > 0) {
-						// 		document.getElementById("notifications-badge").innerHTML = "(" + notificationsCount + ")";
-						// 	}
-						// }
-
 					} else {
 						localStorage.removeItem("accessToken");
 					}
@@ -111,12 +88,10 @@
 		if (localStorage.getItem("accessToken")) {
 			html += '<li>';
 				html += '<a href="/pages">Pages</a> ';
-				// html += '&nbsp;<i class="fa fa-star">Pro</i>';
 			html += '</li>';
 
 			html += '<li>';
 				html += '<a href="/groups">Groups</a> ';
-				// html += '&nbsp;<i class="fa fa-star">Pro</i>';
 			html += '</li>';
 
 			html += '<li>';
@@ -152,13 +127,6 @@
 		alert(file + " " + line + " " + error);
 	};
 </script>
-
-<!-- <style>
-	.fa.fa-star {
-		color: yellowgreen !important;
-	}
-</style> -->
-
 </body>
 
 </html>

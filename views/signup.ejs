@@ -3,10 +3,9 @@
 
 <head>
     <title>Signup</title>
-    <link rel="stylesheet" href="/public/css/main.min.css">
-    <link rel="stylesheet" href="/public/css/styles.css">
-    <link rel="stylesheet" href="/public/css/colors.css">
-    <link rel="stylesheet" href="/public/css/responsive.css">
+	<link rel="stylesheet" href="/public/css/main.min.css">
+	<link rel="stylesheet" href="/public/css/style.css">
+	<link rel="stylesheet" href="/public/css/color.css">
 </head>
 
 <body>
@@ -38,8 +37,14 @@
 								</div>
 
 								<div class="form-group">
-									<input type="password" required name="password" />
+									<input type="password" required name="password" id="pass"/>
 									<label class="control-label">Password</label>
+									<i class="mtrl-select"></i>
+								</div>
+
+								<div class="form-group">
+									<input type="password" required name="confirmpassword" id="confpass"/>
+									<label class="control-label">Confirm Password</label>
 									<i class="mtrl-select"></i>
 								</div>
 
@@ -59,9 +64,9 @@
 									</div>
 								</div>
 
-								<a href="/login">Already have an account</a>
+								Already have an account? <a href="/login"><span style="color: blue;">Login here</span></a>
 								<div class="submit-btns">
-									<button class="mtr-btn signup" name="submit" type="submit">
+									<button class="mtr-btn signup" name="submit" type="submit" onclick="return Validate()">
 										<span>Register</span>
 									</button>
 								</div>
@@ -96,6 +101,15 @@
             ajax.send(new FormData(form));
             return false;
         }
+		function Validate() {
+        var password = document.getElementById("pass").value;
+        var confirmPassword = document.getElementById("confpass").value;
+        if (password != confirmPassword) {
+            alert("Passwords do not match.");
+            return false;
+        }
+        return true;
+    }
     </script>
 </body>
 

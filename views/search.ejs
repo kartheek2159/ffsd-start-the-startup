@@ -32,24 +32,6 @@
 										<div class="tab-pane active fade show" id="people">
 											<ul class="nearby-contct" id="search-results"></ul>
 										</div>
-
-										<!-- <div class="tab-pane active fade" id="pages">
-											<ul class="nearby-contct" id="search-result-pages"></ul>
-
-											<div class="premium">
-												<h1>Paid version only</h1>
-												<p>Please read README.txt to get full version.</p>
-											</div>
-										</div>
-
-										<div class="tab-pane active fade" id="groups">
-											<ul class="nearby-contct" id="search-result-groups"></ul>
-
-											<div class="premium">
-												<h1>Paid version only</h1>
-												<p>Please read README.txt to get full version.</p>
-											</div>
-										</div> -->
 									</div>
 								</div>
 							</div>
@@ -99,7 +81,6 @@
 						html += '<li>';
 							html += '<div class="nearly-pepls">';
 								html += '<figure>';
-									//html += '<a href="/user/' + data.username + '">';
 										html+='<a href="/">';
 										html += '<img src="' + mainURL + '/' + data.profileImage + '">';
 									html += '</a>';
@@ -107,7 +88,6 @@
 
 								html += '<div class="pepl-info">';
 									html += '<h4>';
-										//html += '<a href="/user/' + data.username + '">' + data.name + '</a>';
 										html+='<a href="/">'+data.name+'</a>';
 									html += '</h4>';
 									if(isFriend){

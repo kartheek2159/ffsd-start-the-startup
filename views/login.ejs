@@ -5,8 +5,6 @@
 	<link rel="stylesheet" href="/public/css/main.min.css">
 	<link rel="stylesheet" href="/public/css/style.css">
 	<link rel="stylesheet" href="/public/css/color.css">
-	<link rel="stylesheet" href="/public/css/responsive.css">
-
 </head>
 <body>
 	<div class="theme-layout">
@@ -29,7 +27,7 @@
 									<label class="control-label">Password</label><i class="mtrl-select"></i>
 								</div>
 
-								<a href="/signup">Don't have an account ?</a>
+								Don't have an account? <a href="/signup"><span style="color : blue">Signup here</span></a>
 								<div class="submit-btns">
 									<button class="mtr-btn login" name="submit" type="submit"><span>Login</span></button>
 								</div>
@@ -61,7 +59,7 @@
 						if (response.profileImage == "") {
 							window.location.href = "/updateProfile";
 						} else {
-							window.location.href = "/";
+							window.location.href = "/index";
 						}
 					} else {
 						alert(response.message);
