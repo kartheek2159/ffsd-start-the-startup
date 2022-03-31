@@ -618,7 +618,7 @@ textarea {
     background: rgba(0, 0, 0, 0.7) none repeat scroll 0 0;
     bottom: 100px;
     color: #fff;
-    left: 275px;
+    left: 375px;
     padding: 5px 20px;
     position: absolute;
     z-index: 9;
@@ -634,7 +634,7 @@ textarea {
 
 .fileContainer {
     color: #d8d8d8;
-    font-size: 11px;
+    font-size: 15px;
     margin: 0 0 0 5px;
     position: relative;
     text-transform: capitalize;
@@ -1070,6 +1070,7 @@ footer {
     padding: 75px 0;
     width: 100%;
     position: relative;
+    height: 50px;
 }
 
 footer::before {

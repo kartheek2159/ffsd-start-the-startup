@@ -2,9 +2,9 @@
 
 <section>
 	<div class="feature-photo">
-
+		<!-- onerror="this.src = '/public/img/default_cover.jpg'" -->
 		<figure>
-			<img class="cover-photo" id="cover-photo" style="width: 100%; height: 700px; object-fit: cover;" onerror="this.src = '/public/img/default_cover.jpg'" />
+			<img class="cover-photo" id="cover-photo" style="width: 100%; height: 700px; object-fit: cover;"  />
 		</figure>
 
 		<form class="edit-phto" id="form-cover-photo" onsubmit="return false;">
@@ -53,8 +53,7 @@
 	function showProfileData() {
 		document.querySelector(".cover-photo").setAttribute("src", mainURL + "/" + window.user.coverPhoto);
 		document.querySelector(".profile-image").setAttribute("src", mainURL + "/" + window.user.profileImage);
-
-		document.querySelector(".user-name").innerHTML = window.user.name;
+		document.querySelector(".user-name").innerHTML = window.user.username;
 		document.querySelector(".name").value = window.user.name;
 		document.querySelector(".email").value = window.user.email;
 		document.querySelector(".dob").value = window.user.dob;
@@ -151,7 +150,7 @@
 
 									<h5 class="f-title">
 										<i class="ti-info-alt"></i>
-										Update Profile
+										 Profile
 									</h5>
 
 									<form onsubmit="return doUpdateProfile(this);">
